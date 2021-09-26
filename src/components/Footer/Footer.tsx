@@ -5,11 +5,11 @@ import { getTotalItemsAmount, getDoneItemsAmount } from "utils";
 
 import "./Footer.css";
 
-interface Items {
+interface FooterProps {
   items: Array<ToDoItemType>;
 }
 
-const Footer: React.FC<Items> = ({ items }) => {
+const Footer: React.FC<FooterProps> = ({ items }) => {
   const totalItemsCount = useMemo<number>(
     () => getTotalItemsAmount(items),
     [items]

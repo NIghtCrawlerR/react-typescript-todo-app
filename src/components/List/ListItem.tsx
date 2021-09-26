@@ -6,19 +6,19 @@ import PriorityEnum from "types/PriorityEnum";
 
 import "./ListItem.css";
 
-interface ItemProps extends ToDoItemType {
+interface ListItemProps extends ToDoItemType {
   index: number;
   toggleItemDone: (id: string, checked: boolean) => void;
 }
 
-const ListItem: React.FC<ItemProps> = ({
+const ListItem: React.FC<ListItemProps> = ({
   index,
   text,
   priority,
   id,
   toggleItemDone,
 }) => {
-  const handleChange = (event: any) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {
       target: { checked },
     } = event;

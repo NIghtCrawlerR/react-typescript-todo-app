@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 
 import InputGroup from "components/InputGroup";
-import List from 'components/List'
-import Footer from 'components/Footer'
+import List from "components/List";
+import Footer from "components/Footer";
 
-import ItemType from 'types/ToDoItemType'
-import './Form.css'
+import ItemType from "types/ToDoItemType";
+import "./Form.css";
 
 const Form: React.FC = () => {
-  const [list, setList] = useState<ItemType[]>([])
+  const [list, setList] = useState<ItemType[]>([]);
 
   const handleChange = (newItem: ItemType) => {
-    setList([...list, newItem])
-  }
+    setList([...list, newItem]);
+  };
 
   const toggleItemDone = (id: string, checked: boolean): void => {
-    const updatesItemsList = list.map(item => {
-      return item.id === id ? { ...item, done: !item.done } : item
-    })
+    const updatesItemsList = list.map((item) => {
+      return item.id === id ? { ...item, done: checked } : item;
+    });
 
-    setList(updatesItemsList)
-  }
+    setList(updatesItemsList);
+  };
 
   return (
     <div className="Form">

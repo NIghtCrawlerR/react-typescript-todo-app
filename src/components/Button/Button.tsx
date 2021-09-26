@@ -1,12 +1,16 @@
 import React from "react";
 
-interface ButtonType {
+interface ButtonProps {
   children: React.ReactNode;
-  onClick: () => void
+  onClick: () => void;
 }
 
-const Button: React.FC<ButtonType> = ({ children, onClick }) => {
-  return <button type="button" onClick={onClick}>{children}</button>;
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+  return (
+    <button type="button" onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

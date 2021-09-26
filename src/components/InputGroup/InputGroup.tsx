@@ -8,11 +8,11 @@ import PriorityEnum from "types/PriorityEnum";
 
 import "./InputGroup.css";
 
-interface InputGroupType {
+interface InputGroupProps {
   onSubmit: (values: ToDoItemType) => void;
 }
 
-const InputGroup: React.FC<InputGroupType> = ({ onSubmit }) => {
+const InputGroup: React.FC<InputGroupProps> = ({ onSubmit }) => {
   const [value, setValue] = useState<string>("");
   const [priority, setPriority] = useState<PriorityEnum>(PriorityEnum.Low);
 
@@ -33,12 +33,16 @@ const InputGroup: React.FC<InputGroupType> = ({ onSubmit }) => {
   };
 
   const handleSubmit = (): void => {
+    if (!value) return
+
     onSubmit({ text: value, priority, done: false, id: uuidv4() });
     setValue("");
   };
 
-  const handleKeyDown = ({ key }: React.KeyboardEvent<HTMLInputElement>) => {
-    if (key === 'Enter') {
+  const handleKeyDown = ({
+    key,
+  }: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (key === "Enter") {
       handleSubmit();
     }
   };
