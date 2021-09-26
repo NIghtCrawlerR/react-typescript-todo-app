@@ -1,0 +1,28 @@
+.ListItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0 4px 16px;
+  margin-bottom: 4px;
+}
+
+.ListItem.low {
+  border-left: 3px solid #37c1ca;
+}
+
+.ListItem.mid {
+  border-left: 3px solid #ffcb00;
+}
+
+.ListItem.high {
+  border-left: 3px solid #da1313;
+}
+
+.ListItem__value {
+  display: flex;
+  padding-right: 8px;
+}
+
+.ListItem__index {
+  margin-right: 8px;
+  font-weight: bold;
+}

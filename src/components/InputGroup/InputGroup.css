@@ -1,0 +1,13 @@
+.InputGroup {
+  display: flex;
+  height: 40px;
+}
+
+.InputGroup__input {
+  flex: 1;
+  margin-right: 4px;
+}
+
+.InputGroup__select {
+  margin-right: 4px;
+}
