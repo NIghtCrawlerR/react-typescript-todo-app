@@ -35,3 +35,10 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('addItems', (count: number = 1) => {
+  for (let i = 0; i < count; i++) {
+    cy.get('input[name=todoItem]').type(`New item ${i}`)
+    cy.contains('Submit').click()
+  }
+})

@@ -12,7 +12,7 @@ interface ListProps {
 
 const List: React.FC<ListProps> = ({ list, toggleItemDone }) => {
   return (
-    <div className="List">
+    <div data-testid="itemsList" className="List">
       {!!list.length
         ? list.map((item, i) => (
             <ListItem

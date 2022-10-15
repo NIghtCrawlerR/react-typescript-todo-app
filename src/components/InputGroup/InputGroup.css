@@ -1,11 +1,32 @@
 .InputGroup {
+  position: relative;
   display: flex;
   height: 40px;
+  margin-bottom: 16px;
+}
+
+.InputGroup__input-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.InputGroup__input-error {
+  position: absolute;
+  margin: 0;
+  bottom: -16px;
+  color: red;
+  font-size: 12px;
 }
 
 .InputGroup__input {
   flex: 1;
   margin-right: 4px;
+  border: 1px solid #737373;
+  outline: none;
+}
+
+.InputGroup__input.error {
+  border-color: red;
 }
 
 .InputGroup__select {

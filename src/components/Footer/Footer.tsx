@@ -21,10 +21,10 @@ const Footer: React.FC<FooterProps> = ({ items }) => {
 
   return (
     <div className="Footer">
-      <div className="Footer__item">
+      <div data-testid="totalItems" className="Footer__item">
         Total items: <b>{totalItemsCount}</b>
       </div>
-      <div className="Footer__item">
+      <div data-testid="doneItems" className="Footer__item">
         Items done: <b>{doneItemsCount}</b>
       </div>
     </div>
