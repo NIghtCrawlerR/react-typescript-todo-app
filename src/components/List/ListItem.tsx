@@ -16,6 +16,7 @@ const ListItem: React.FC<ListItemProps> = ({
   text,
   priority,
   id,
+  done,
   toggleItemDone,
 }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,6 +32,7 @@ const ListItem: React.FC<ListItemProps> = ({
         low: priority === PriorityEnum.Low,
         mid: priority === PriorityEnum.Medium,
         high: priority === PriorityEnum.High,
+        done,
       })}
     >
       <div className="ListItem__value">
